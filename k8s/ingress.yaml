@@ -1,0 +1,14 @@
+# DEPRECATED — not applied, not committed to git.
+#
+# The assessment brief allows either an ALB-Controller-based Ingress OR
+# explicit NodePort targets for a Terraform-managed external ALB. This
+# project uses the latter: service.yaml exposes NodePort 30080, and
+# starttech-infra/terraform/modules/eks/main.tf creates an
+# aws_lb + aws_lb_target_group + aws_autoscaling_attachment that targets
+# it directly — no AWS Load Balancer Controller install, no Ingress
+# object, no chicken-and-egg between "the controller must be running
+# before the Ingress does anything."
+#
+# This file is intentionally excluded from `git add` / kubectl apply -f
+# k8s/ — kept only as a local note explaining why an ingress.yaml isn't
+# part of this repo's actual manifest set.

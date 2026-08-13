@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: default
+data:
+  # Set REDIS_HOST to your ElastiCache primary endpoint (without port)
+  REDIS_HOST: "REPLACE_WITH_ELASTICACHE_ENDPOINT"
+  ALLOWED_ORIGINS: "https://REPLACE_WITH_CLOUDFRONT_DOMAIN"
